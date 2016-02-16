@@ -3,14 +3,25 @@ angular.module("chatApp").controller("LoginController",
 	["$scope", "ChatResource", //ef við ætlum að minifia kóðan
 	function LoginController($scope, ChatResource) { //Sjá ChatResource.js
 
-		ChatResource.login($scope.user, $scope.pass, function(success)
-			if(!success) {
+		//hér setjum við upphafsgildi á username 
+		$scope.user = "username";
+		
+		$scope.errorMessage = "";
 
-			}else {
+		//hér sækjum við usernamið sem kemur inn frá login.html
+		$scope.onLogin =function onLogin() {
+			ChatResource.login($scope.user, $scope.pass, function(success)
+				if(!success) {
+						$scope.errorMessage = "Innskráning mistókst";
+				}else {
+					//TODO senda notandann á herbergjalistann
+				}
 
-			}
+				)
+		    })          
+		};
 
-			)
+		
 	}]);
 
 

@@ -1,6 +1,6 @@
 
 angular.module("chatApp").controller("RoomlinstController",
-	function RoomlinstController () {
+	function RoomlinstController ($scope) {
 		
 
 		$scope.roomlist = [ {

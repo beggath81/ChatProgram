@@ -1,7 +1,7 @@
 "use strict";
 angular.module("chatApp").controller("LoginController", 
 	["$scope", "ChatResource", //ef við ætlum að minifia kóðan
-	function LoginController($scope, ChatResource) { //Sjá ChatResource.js
+	function LoginController($scope, $location, ChatResource) { //Sjá ChatResource.js
 
 		//hér setjum við upphafsgildi á username 
 		$scope.user = "username";
@@ -14,10 +14,10 @@ angular.module("chatApp").controller("LoginController",
 				if(!success) {
 						$scope.errorMessage = "Login failed";
 				}else {
-					//TODO senda notandann á herbergjalistann
+					$location("/roomlist");	// gæti þurft # á undan /			
 				}
 
-				)
+				
 		    })          
 		};
 

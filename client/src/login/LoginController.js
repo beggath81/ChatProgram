@@ -12,7 +12,7 @@ angular.module("chatApp").controller("LoginController",
 		$scope.onLogin =function onLogin() {
 			ChatResource.login($scope.user, $scope.pass, function(success)
 				if(!success) {
-						$scope.errorMessage = "Innskráning mistókst";
+						$scope.errorMessage = "Login failed";
 				}else {
 					//TODO senda notandann á herbergjalistann
 				}

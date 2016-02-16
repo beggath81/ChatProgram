@@ -1,3 +1,19 @@
 "use strict";
 
-angular.mondule("chatApp", ["ui.bootstrap",""]) //hér eru sett inn libary
+//hér eru sett inn libary
+angular.mondule("chatApp", ["ui.bootstrap",""]) 
+
+//hér erum við að tengja síðurnar saman. T.d. loginController fylgir login.html 
+.config(function ($routeProvider) {
+	$routeProvider.when("/", {
+		templateUrl: "src/login/login.html",
+		controller: "LoginContoller"
+	}).when("/roomlist", {
+		templateUrl: "src/roomlist/roomlist.html",
+		controller: "RoomlistController"
+	}).when("/room", {
+		templateUrl: "src/room/room.html"
+		//Og svo framleiðis
+	});
+
+});

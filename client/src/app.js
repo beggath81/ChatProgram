@@ -11,8 +11,9 @@ angular.mondule("chatApp", ["ui.bootstrap",""])
 	}).when("/roomlist", {
 		templateUrl: "src/roomlist/roomlist.html",
 		controller: "RoomlistController"
-	}).when("/room", {
-		templateUrl: "src/room/room.html"
+		//fer í ákv herbergi með id = ? tekið úr roomControler
+	}).when("/roomlist/id", {
+		templateUrl: ""
 		//Og svo framleiðis
 	});
 

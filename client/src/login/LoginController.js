@@ -1,7 +1,10 @@
 "use strict";
+
 angular.module("chatApp").controller("LoginController", 
-	["$scope", "ChatResource", //ef við ætlum að minifia kóðan
-	function LoginController($scope, $location, ChatResource) { //Sjá ChatResource.js
+	//ef við ætlum að minifia kóðan
+	["$scope", "ChatResource", 
+											         //Sjá ChatResource.js
+	function LoginController($scope, $location, ChatResource) { 
 
 		//hér setjum við upphafsgildi á username 
 		$scope.user = "username";
@@ -14,14 +17,18 @@ angular.module("chatApp").controller("LoginController",
 				if(!success) {
 						$scope.errorMessage = "Login failed";
 				}else {
-					$location("/roomlist");	// gæti þurft # á undan /			
+					$location("#/roomlist");				
 				}
 
 				
 		    })          
 		};
 
-		
+		$scope.onChangeUsername = function onChangeUsername() {
+			if($scope.name.length > 3) {
+				//TODO:
+			}
+		}
 	}]);
 
 

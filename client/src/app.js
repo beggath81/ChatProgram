@@ -4,7 +4,7 @@
 var chatApp = angular.module("chatApp", ["ngRoute"]) 
 
 //hér erum við að tengja síðurnar saman. T.d. loginController fylgir login.html 
-chatApp.config(function ($routeProvider) {
+chatApp.config('$routProvider', function ($routeProvider) {
 	$routeProvider
 	//þegar ég er á upphafsíðu s.s. í urlinu ChatProgram/
 	.when("/", {     //þá vil ég að login síðan sé sýnileg
@@ -24,7 +24,8 @@ chatApp.config(function ($routeProvider) {
 
 		//ef eitthvað annað er slegið inn í urlið þá er farið aftur á upphafssíðu
 	}).otherwise({
-		redirectTo: "/"
+		redirectTo: "/",
+
 
 
 	});

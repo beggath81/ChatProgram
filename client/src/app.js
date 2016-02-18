@@ -1,15 +1,15 @@
 "use strict";
 
 //hér eru sett inn libary
-var chatApp = angular.module("chatApp", ["ngRoute"]) 
+var chatApp = angular.module("chatApp", ["ngRoute"]) ;
 
 //hér erum við að tengja síðurnar saman. T.d. loginController fylgir login.html 
-chatApp.config('$routProvider', function ($routeProvider) {
+chatApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider
 	//þegar ég er á upphafsíðu s.s. í urlinu ChatProgram/
 	.when("/", {     //þá vil ég að login síðan sé sýnileg
-		templateUrl: '/login/login.html',
-		controller: 'LoginContoller'
+		templateUrl: 'src/login/login.html',
+		controller: 'LoginController'
 	})
 	.when("/roomlist", {
 		templateUrl: "/roomlist.html",
@@ -30,4 +30,4 @@ chatApp.config('$routProvider', function ($routeProvider) {
 
 	});
 
-});
+}]);

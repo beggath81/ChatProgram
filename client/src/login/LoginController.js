@@ -7,12 +7,9 @@ angular.module("chatApp").controller("LoginController",
 	function LoginController($scope, $location, ChatResource) { 
 
 		//hér setjum við upphafsgildi á username 
-		$scope.user = "user";
+		$scope.user = "";
 		
 		$scope.errorMessage = "";
-		$scope.onAddNewUser = function onAddNewUser() {
-			$location("/adduser/adduser");
-		}
 
 		//hér sækjum við usernamið sem kemur inn frá login
 		$scope.onLogin = function onLogin() {
@@ -20,13 +17,16 @@ angular.module("chatApp").controller("LoginController",
 				if(!success) {
 						$scope.errorMessage = "Login failed";
 				}else {
+  
+		           
 					$location("/roomlist/roomlist/");				
 				}		
-		    })          
+		    })         
 		};
 		
 		$scope.onChangeUsername = function onChangeUsername() {
 			if($scope.name.length > 3) {
+				$scope.name = $scope.user;
 				//TODO:
 			}
 		}

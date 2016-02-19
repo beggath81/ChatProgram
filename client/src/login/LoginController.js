@@ -2,7 +2,7 @@
 
 angular.module("chatApp").controller("LoginController", 
 	//ef við ætlum að minifia kóðan
-	["$scope", "ChatResource", 
+	["$scope", "$location", "ChatResource", 
 											         //Sjá ChatResource.js
 	function LoginController($scope, $location, ChatResource) { 
 
@@ -20,14 +20,11 @@ angular.module("chatApp").controller("LoginController",
 				if(!success) {
 						$scope.errorMessage = "Login failed";
 				}else {
-					$location("/roomlist/roomlist");				
-				}
-				
+					$location("/roomlist/roomlist/");				
+				}		
 		    })          
 		};
-
 		
-
 		$scope.onChangeUsername = function onChangeUsername() {
 			if($scope.name.length > 3) {
 				//TODO:

@@ -16,7 +16,7 @@ angular.module("chatApp").controller("LoginController",
 
 		//hér sækjum við usernamið sem kemur inn frá login
 		$scope.onLogin = function onLogin() {
-			ChatResource.login($scope.user, function(success)
+			ChatResource.login($scope.user, function(success) {
 				if(!success) {
 						$scope.errorMessage = "Login failed";
 				}else {

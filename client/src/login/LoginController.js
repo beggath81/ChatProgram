@@ -10,6 +10,9 @@ angular.module("chatApp").controller("LoginController",
 		$scope.user = "user";
 		
 		$scope.errorMessage = "";
+		$scope.onAddNewUser = function onAddNewUser() {
+			$location("/adduser/adduser");
+		}
 
 		//hér sækjum við usernamið sem kemur inn frá login
 		$scope.onLogin = function onLogin() {
@@ -22,6 +25,8 @@ angular.module("chatApp").controller("LoginController",
 				
 		    })          
 		};
+
+		
 
 		$scope.onChangeUsername = function onChangeUsername() {
 			if($scope.name.length > 3) {

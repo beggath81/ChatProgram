@@ -8,16 +8,17 @@ chatApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider
 	//þegar ég er á upphafsíðu s.s. í urlinu ChatProgram/
 	.when("/", {     //þá vil ég að login síðan sé sýnileg
-		templateUrl: 'src/login/login.html',
-		controller: 'LoginController'
+		templateUrl: "src/login/login.html",
+		controller: "LoginController"
 	})
 	.when("/roomlist", {
-		templateUrl: "/roomlist.html",
+		templateUrl: "src/roomlist/roomlist.html",
 		controller: "RoomlistController"
 		//fer í ákv herbergi með id = ? tekið úr roomControler
-	}).when("/room/id", {
-		templateUrl: "/room.html",
-		controller: "roomControler"
+	})
+	.when("/room/id", {
+		templateUrl: "src/room/room.html",
+		controller: "RoomController"
 		
 		//Og svo framleiðis
 

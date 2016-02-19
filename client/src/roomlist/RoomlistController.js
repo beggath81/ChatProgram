@@ -1,6 +1,6 @@
 
-angular.module("chatApp").controller("RoomlinstController",
-	function RoomlinstController ($scope, socket) {
+angular.module("chatApp").controller("RoomlistController",
+	function RoomlistController ($scope, socket) {
 		
 		//biðjum um listann frá server
 		socket.emit("rooms");

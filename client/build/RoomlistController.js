@@ -16,12 +16,7 @@ angular.module("chatApp").controller("RoomlistController",
 				$scope.roomlist = roomlist;
 			});
 
-		});	
-		$scope.$on("$destroy", function() {
-			socket.off("rooms" function() {
-				console.log("Event deregister succeeded");
-			})
-		})	
+		});		
 			
 });
 //6a min 30

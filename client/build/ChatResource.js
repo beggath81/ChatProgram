@@ -2,7 +2,7 @@
 "use strict";
 
 angular.module("chatApp").factory("ChatResource", 
-	function ChatResource(socket, $scope){
+	function ChatResource(socket){
 		return {
 			//þau föll í bakendanum sem við viljum getað kallað í 
 			login: function login(user, callback){
@@ -17,6 +17,6 @@ angular.module("chatApp").factory("ChatResource",
 			getRoomList: function getRoomList(callback) {
 				//TODO
 			},
-		};
+		}
 	});
 

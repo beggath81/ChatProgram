@@ -1,10 +1,10 @@
 module.exports = function ( grunt ) {
-//grunt.loadNpmTasks('grunt-contrib-jshint');
+ grunt.loadNpmTasks('grunt-contrib-jshint');
  grunt.loadNpmTasks('grunt-contrib-uglify');
  grunt.loadNpmTasks('grunt-contrib-min');
  grunt.loadNpmTasks('grunt-contrib-concat');
  grunt.loadNpmTasks('grunt-contrib-cssmin');
- grunt.registerTask('default', ['concat',  'cssmin', 'uglify']);
+ grunt.registerTask('default', ['concat',  'cssmin', 'jshint', 'uglify']);
  var taskConfig = {
    jshint: {
      src: ['**/*.js'],
@@ -36,11 +36,11 @@ module.exports = function ( grunt ) {
 
    concat: {
   js: {
-    src: 'build/*.js',
+    src: 'src/js/*.js',
     dest: 'dest/js/concat.js'
   },
   css: {
-    src: 'build/*.css',
+    src: 'src/css/*.css',
     dest: 'dest/css/concat.css'
   }
 },
@@ -51,22 +51,10 @@ min: {
     dest: 'dest/js/concat.min.js'
   }
 },
-
 cssmin: {
   css:{
     src: 'dest/css/concat.css',
     dest: 'dest/css/concat.min.css'
-  }
-},
-
-uglify: {
-  js: {
-    src: 'dest/js/concat.min.js',
-    dest: 'dest/js/uglify.js'
-  },
-  css: {
-    src: 'dest/css/concat.min.css',
-    dest: 'dest/css/uglify.css'
   }
 }
  };

@@ -21,7 +21,7 @@ angular.module("chatApp").controller("LoginController",
 		           
 					$location("/roomlist/roomlist/");				
 				}		
-		    });         
+		    })         
 		};
 		
 		$scope.onChangeUsername = function onChangeUsername() {
@@ -29,7 +29,7 @@ angular.module("chatApp").controller("LoginController",
 				$scope.name = $scope.user;
 				//TODO:
 			}
-		};
+		}
 	}]);
 
 
